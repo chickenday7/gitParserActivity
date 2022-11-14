@@ -1,0 +1,22 @@
+{
+  "name": "git-scraper",
+  "version": "0.1.0",
+  "description": "scraper for activity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "p.permyakov",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "node": "^19.0.1",
+    "puppeteer": "^19.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.7.1"
+  }
+}
