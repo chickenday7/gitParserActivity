@@ -6,13 +6,13 @@ const SELECTOR_TYPE = {
   LOGIN: "#username",
   PASSWORD: "#password",
 };
-const PAGE_ERROR = "https://git.redrowant.ru/users/sign_in";
+const PAGE_ERROR = `${process.env.GIT}/users/sign_in`;
 
 const gitLogin = async ({ login, password }) => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 720 });
-  await page.goto("https://git.redrowant.ru/users/sign_in", {
+  await page.goto(`${process.env.GIT}/users/sign_in`, {
     waitUntil: "networkidle0",
   });
   await page.type(SELECTOR_TYPE.LOGIN, login);
@@ -23,7 +23,7 @@ const gitLogin = async ({ login, password }) => {
   if (page.url() === PAGE_ERROR) {
     initApp();
   } else {
-    await page.goto(`https://git.redrowant.ru/users/${login}/activity`, {
+    await page.goto(`${process.env.GIT}/users/${login}/activity`, {
       waitUntil: "networkidle0",
     });
   }

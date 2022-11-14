@@ -1,5 +1,7 @@
 import { getLogPass } from "./src/handlers/askLogPass.js";
 import getDataProjects from "./src/puppeter/getDataProjects.js";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const initApp = async () => {
   const user = await getLogPass();
